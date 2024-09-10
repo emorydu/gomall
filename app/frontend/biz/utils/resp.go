@@ -3,7 +3,7 @@ package utils
 import (
 	"context"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/emory/gomall/app/frontend/middleware"
+	"github.com/emory/gomall/app/frontend/utils"
 )
 
 // SendErrResponse  pack error response
@@ -19,6 +19,6 @@ func SendSuccessResponse(ctx context.Context, c *app.RequestContext, code int, d
 }
 
 func WrapResponse(ctx context.Context, c *app.RequestContext, content map[string]any) map[string]any {
-	content["UserID"] = ctx.Value(middleware.SessionUserId)
+	content["UserID"] = ctx.Value(utils.GetUserIdFromCtx(ctx))
 	return content
 }
