@@ -1,6 +1,7 @@
 *.o
 *.sum
 *.a
+*.env
 *.so
 _obj
 _test

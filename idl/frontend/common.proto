@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package frontend.common;
+
+import "api.proto";
+
+option go_package = "frontend/common";
+
+message Empty {
+
+}
